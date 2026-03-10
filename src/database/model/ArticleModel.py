@@ -19,7 +19,7 @@ class ArticleModel(BaseModel, DeclarativeBase):
         self.title = title
         self.description = description
         self.author = author
-        self.type = article_type
+        self.article_type = article_type
         self.article_time = article_time
 
     @staticmethod
