@@ -11,24 +11,24 @@ class ArticleModel(BaseModel, DeclarativeBase):
     title: Mapped[str] = mapped_column(String(255))
     description: Mapped[str] = mapped_column(String(255))
     author: Mapped[str] = mapped_column(String(32))
-    type: Mapped[str] = mapped_column(String(32))
+    article_type: Mapped[str] = mapped_column(String(32))
     article_time: Mapped[str] = mapped_column(String(32))
 
-    def __init__(self, title: str, description: str, author: str, type: str, article_time: str):
+    def __init__(self, title: str, description: str, author: str, article_type: str, article_time: str):
         super().__init__()
         self.title = title
         self.description = description
         self.author = author
-        self.type = type
+        self.type = article_type
         self.article_time = article_time
 
     @staticmethod
-    def create_model(title: str, description: str, author: str, type: str, article_time: str) -> "ArticleModel":
+    def create_model(title: str, description: str, author: str, article_type: str, article_time: str) -> "ArticleModel":
         return ArticleModel(
             title = title,
             description = description,
             author = author,
-            type = type,
+            article_type = article_type,
             article_time = article_time
         )
 
